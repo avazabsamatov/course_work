@@ -1,0 +1,28 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: ApiGateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user-service/**
+        - id: course-service
+          uri: lb://course-service
+          predicates:
+            - Path=/api/course-service/**
+        - id: module-service
+          uri: lb://module-service
+          predicates:
+            - Path=/api/module-service/**
+        - id: lesson-service
+          uri: lb://lesson-service
+          predicates:
+            - Path=/api/lesson-service/**
+#eureka:
+#  client:
+#    service-url:
+#      defoultZone: http://lacahost:8761/eureka

@@ -8,18 +8,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="course-service" />
+        <module name="lesson-service" />
+        <module name="pay-type-service" />
+        <module name="api-gateway" />
         <module name="module-service" />
         <module name="user-service" />
-        <module name="lesson-service" />
         <module name="eureka-server" />
-        <module name="pay-type-service" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
       <module name="course-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="lesson-service" options="-parameters" />
       <module name="module-service" options="-parameters" />
       <module name="pay-type-service" options="-parameters" />

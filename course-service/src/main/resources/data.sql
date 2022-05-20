@@ -1,0 +1,1 @@
+insert into courses(id,name ,description,is_active) values (1,'Java','Java the best',true)
